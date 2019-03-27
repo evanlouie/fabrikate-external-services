@@ -1,0 +1,21 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace}}
+spec:
+  ports:
+{{ if .Values.service }}
+{{ toYaml .Values.service.ports | indent 4 }}
+{{ end }}
+
+---
+kind: Endpoints
+apiVersion: v1
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace}}
+subsets:
+{{ if .Values.endpoints }}
+{{ toYaml .Values.endpoints.subsets | indent 2 }}
+{{ end }}

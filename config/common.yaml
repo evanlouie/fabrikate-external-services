@@ -1,0 +1,7 @@
+config:
+  name:
+  namespace:
+  service:
+    ports: [] # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.13/#serviceport-v1-core
+  endpoints:
+    subsets: [] # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.13/#endpointsubset-v1-core

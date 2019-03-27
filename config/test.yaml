@@ -1,0 +1,16 @@
+config:
+  name: "foobar"
+  namespace: default
+  service:
+    ports:
+      - protocol: TCP
+        port: 80
+        targetPort: 9376
+  endpoints:
+    subsets: # https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.13/#endpointsubset-v1-core
+      - addresses:
+          - ip: 1.2.3.4
+          - ip: 4.3.2.1
+        ports:
+          - port: 9376
+          - port: 1337
